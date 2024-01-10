@@ -466,6 +466,7 @@ func (vm *VM) Initialize(
 	vm.client = peer.NewNetworkClient(vm.Network)
 
 	// Initialize warp backend
+	log.Info("Initializing warp backend", "networkID", vm.networkID, "chainID", vm.chainConfig.ChainID, "offchainWarpMessagesCount", len(vm.config.WarpOffChainMessages))
 	offchainWarpMessages := make([][]byte, len(vm.config.WarpOffChainMessages))
 	for i, hexMsg := range vm.config.WarpOffChainMessages {
 		offchainWarpMessages[i] = []byte(hexMsg)
