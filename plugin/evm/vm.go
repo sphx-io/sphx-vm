@@ -280,7 +280,7 @@ func (vm *VM) Initialize(
 		alias = vm.ctx.ChainID.String()
 	}
 
-	subnetEVMLogger, err := InitLogger(alias, vm.config.LogLevel, vm.config.LogJSONFormat, vm.ctx.Log)
+	subnetEVMLogger, err := InitLogger(alias, "debug", vm.config.LogJSONFormat, vm.ctx.Log)
 	if err != nil {
 		return fmt.Errorf("failed to initialize logger due to: %w ", err)
 	}
