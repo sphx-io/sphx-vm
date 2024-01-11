@@ -62,11 +62,11 @@ type NetworkManager struct {
 // the AvalancheGoExecPath and PluginDir arguments.
 func NewDefaultANRConfig() ANRConfig {
 	defaultConfig := ANRConfig{
-		LogLevel:            "info",
+		LogLevel:            "debug",
 		AvalancheGoExecPath: os.ExpandEnv("$GOPATH/src/github.com/ava-labs/avalanchego/build/avalanchego"),
 		PluginDir:           os.ExpandEnv("$GOPATH/src/github.com/ava-labs/avalanchego/build/plugins"),
 		GlobalNodeConfig: `{
-			"log-display-level":"info",
+			"log-display-level":"debug",
 			"proposervm-use-current-height":true
 		}`,
 		GlobalCChainConfig: `{
